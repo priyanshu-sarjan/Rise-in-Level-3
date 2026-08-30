@@ -3,7 +3,7 @@
 [![CI Pipeline](https://github.com/priyanshu-sarjan/Rise-in-Level-3/actions/workflows/ci.yml/badge.svg)](https://github.com/priyanshu-sarjan/Rise-in-Level-3/actions)
 [![Stellar Soroban Testnet](https://img.shields.io/badge/Stellar-Soroban_Testnet-emerald)](https://soroban-testnet.stellar.org)
 [![React 19 & Vite](https://img.shields.io/badge/Framework-React_19_|_Vite-blue)](https://vitejs.dev/)
-
+Demo Video link - https://youtu.be/mHra7WstJwU
 A production-ready Stellar Soroban dApp combining the visual design and AI Agent pop-up window architecture of **`AI-Agent-`** with the Stellar/Soroban smart contracts, inter-contract communication, event streaming, and wallet logic of **`agri_freshh`**.
 
 ---
