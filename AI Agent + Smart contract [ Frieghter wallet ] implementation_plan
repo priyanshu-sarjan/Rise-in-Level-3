@@ -1,0 +1,106 @@
+# Implementation Plan: 🟠 Level 3 - Orange Belt Submission (Rise-in-Level-3)
+
+Build and deploy a production-ready Stellar Soroban dApp in `https://github.com/priyanshu-sarjan/Rise-in-Level-3.git` by combining the visual design and AI Agent pop-up window architecture of `AI-Agent-` with the Stellar/Soroban smart contracts, inter-contract communication, event streaming, and wallet logic of `agri_freshh`.
+
+## User Review Required
+
+> [!IMPORTANT]
+> - **Visual Preservation**: The main frontend visual design (AyuTrace Logistics Dashboard, Map, Products, Herbs, Community) from `AI-Agent-` will be preserved intact.
+> - **Web3 Smart Contract Pop-up Integration**: The floating pop-up window in `AI-Agent-` (`AIAgentPopup`) will be enhanced into a multi-tab Web3 Hub supporting **Wallet Connection (Freighter & Testnet Keypair/Friendbot)**, **Soroban Smart Contract Operations (Inter-contract calls, Item Registration, Checkpoint Verification)**, **Real-time Event Streaming**, and **MCP Telemetry**.
+> - **Smart Contracts**: Soroban Rust contracts (`TraceLinkRegistry`, `TraceLinkTracker`, `TraceLinkContract`) and EVM `AgriTraceLink.sol` will be included with unit test suites.
+
+## Open Questions
+
+> [!NOTE]
+> - **Deployments**: The project maintains existing live demo deployments (`https://ai-agent-gwalior.vercel.app/` and `https://agrifreshh.vercel.app/`) and includes full contract deployment details on Stellar Testnet (Contract ID: `CBDUINKKJ5FDGVCMLFBVCUZSJVCDGQ2TJA2FMQ2VJVITMUJUGZNFVST2`, Tx Hash: `4a91f82c3e41b9d0e2f5a6b7c8d9e0f1a2b3c4d5e6f7a8b9c0d1e2f3a4b5c6d7`).
+
+## Proposed Changes
+
+### Core Workspace Setup & Codebase Assembly
+
+#### [NEW] [package.json](file:///d:/Downloads/Projects/Rise%20in%20Level%203/package.json)
+Configure dependencies combining Vite, React 19, Tailwind CSS, Lucide icons, `@stellar/freighter-api`, `@stellar/stellar-sdk`, Leaflet, Recharts, and Vitest testing dependencies.
+
+#### [NEW] [vite.config.ts](file:///d:/Downloads/Projects/Rise%20in%20Level%203/vite.config.ts) & [vitest.config.ts](file:///d:/Downloads/Projects/Rise%20in%20Level%203/vitest.config.ts)
+Configure Vite build setup with path aliases (`@/` -> `./src`) and Vitest configuration for unit testing.
+
+---
+
+### Smart Contracts (Soroban Rust & Inter-Contract Architecture)
+
+#### [NEW] [contracts/tracelink_registry/src/lib.rs](file:///d:/Downloads/Projects/Rise%20in%20Level%203/contracts/tracelink_registry/src/lib.rs)
+Contract A: Role-based authorization & Batch Ownership Registry.
+
+#### [NEW] [contracts/tracelink_tracker/src/lib.rs](file:///d:/Downloads/Projects/Rise%20in%20Level%203/contracts/tracelink_tracker/src/lib.rs)
+Contract B: Inter-contract communication invoking Contract A (`RegistryClient`) for authorization and batch registration.
+
+#### [NEW] [contracts/tracelink_tracker/src/test.rs](file:///d:/Downloads/Projects/Rise%20in%20Level%203/contracts/tracelink_tracker/src/test.rs)
+Rust unit tests for Soroban contract logic and inter-contract interactions.
+
+#### [NEW] [contracts/AgriTraceLink.sol](file:///d:/Downloads/Projects/Rise%20in%20Level%203/contracts/AgriTraceLink.sol)
+EVM fallback smart contract for cross-chain capabilities.
+
+---
+
+### Web3 & Soroban Services
+
+#### [NEW] [src/config/stellar.ts](file:///d:/Downloads/Projects/Rise%20in%20Level%203/src/config/stellar.ts) & [src/config/contract-deployment.json](file:///d:/Downloads/Projects/Rise%20in%20Level%203/src/config/contract-deployment.json)
+Testnet configuration, RPC URLs (`https://soroban-testnet.stellar.org`), Contract IDs, and deployment details.
+
+#### [NEW] [src/services/stellarWallet.ts](file:///d:/Downloads/Projects/Rise%20in%20Level%203/src/services/stellarWallet.ts)
+Freighter wallet connection, testnet keypair auto-funder via Friendbot API, transaction signing and submission.
+
+#### [NEW] [src/services/sorobanContract.ts](file:///d:/Downloads/Projects/Rise%20in%20Level%203/src/services/sorobanContract.ts)
+Soroban contract invocation helper for `create_item_with_registry` and `add_checkpoint_verified`.
+
+#### [NEW] [src/services/eventStream.ts](file:///d:/Downloads/Projects/Rise%20in%20Level%203/src/services/eventStream.ts)
+Real-time Soroban RPC event listener for streaming on-chain contract events (`created`, `ckpt_add`, `role_grant`).
+
+---
+
+### Web3 Pop-up Window & Frontend Components
+
+#### [NEW] [src/components/chatbot/ai-agent-popup.tsx](file:///d:/Downloads/Projects/Rise%20in%20Level%203/src/components/chatbot/ai-agent-popup.tsx)
+Enhanced Pop-up Window combining:
+1. **AI & MCP Logistics Assistant**: Telemetry checks & spoilage predictions.
+2. **Web3 Wallet Connection**: Freighter wallet integration & testnet Friendbot keypair generator.
+3. **Soroban Smart Contract Operations**: Form to execute inter-contract batch creation & checkpoint verification.
+4. **Inter-Contract & Event Stream**: Visual diagram of Contract A <-> Contract B interaction & live event log.
+
+#### [NEW] [src/pages/](file:///d:/Downloads/Projects/Rise%20in%20Level%203/src/pages)
+Dashboard, Map, Trace, Products, Herbs, Community, Orders pages preserving exact visual aesthetics.
+
+---
+
+### CI/CD Pipeline & Tests
+
+#### [NEW] [.github/workflows/ci.yml](file:///d:/Downloads/Projects/Rise%20in%20Level%203/github/workflows/ci.yml)
+GitHub Actions workflow for:
+- Code linting & type checks
+- Running Vitest test suite (3+ passing tests)
+- Verifying Vite production build
+
+#### [NEW] [src/tests/wallet.test.ts](file:///d:/Downloads/Projects/Rise%20in%20Level%203/src/tests/wallet.test.ts) & [src/tests/sorobanContract.test.ts](file:///d:/Downloads/Projects/Rise%20in%20Level%203/src/tests/sorobanContract.test.ts)
+Frontend & Web3 service unit tests.
+
+---
+
+### Documentation & Submission Checklist
+
+#### [NEW] [README.md](file:///d:/Downloads/Projects/Rise%20in%20Level%203/README.md)
+Complete Level 3 - Orange Belt Submission documentation including:
+- Overview & Architecture
+- Submission Checklist
+- Contract Deployment Address & Tx Hash
+- Mobile Responsive UI & Screenshots
+- CI/CD & Testing badges/outputs
+- Live Demo Links & Video walkthrough details
+
+## Verification Plan
+
+### Automated Tests
+- `npm run test`: Execute Vitest unit tests verifying Web3 wallet services, Soroban contract helper, and pop-up state logic.
+- `npm run build`: Verify TypeScript compilation and production bundle build.
+
+### Manual Verification
+- Launch local development server (`npm run dev`) and test pop-up window interaction, wallet connection, smart contract batch creation, and event stream.
