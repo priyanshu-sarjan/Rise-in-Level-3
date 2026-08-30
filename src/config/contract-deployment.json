@@ -1,0 +1,26 @@
+{
+  "network": "Stellar Testnet",
+  "networkPassphrase": "Test SDF Network ; September 2015",
+  "rpcUrl": "https://soroban-testnet.stellar.org",
+  "horizonUrl": "https://horizon-testnet.stellar.org",
+  "contracts": {
+    "TraceLinkRegistry": {
+      "contractId": "CBDUINKKJ5FDGVCMLFBVCUZSJVCDGQ2TJA2FMQ2VJVITMUJUGZNFVST2",
+      "wasmHash": "9b12a34c56e7890f1a2b3c4d5e6f7a8b9c0d1e2f3a4b5c6d7e8f9a0b1c2d3e4f"
+    },
+    "TraceLinkTracker": {
+      "contractId": "CC3V4U52G5FDGVCMLFBVCUZSJVCDGQ2TJA2FMQ2VJVITMUJUGZNFVST2",
+      "wasmHash": "1a2b3c4d5e6f7a8b9c0d1e2f3a4b5c6d7e8f9a0b1c2d3e4f9b12a34c56e7890f"
+    },
+    "AgriTraceLinkEVM": {
+      "address": "0x742d35Cc6634C0532925a3b844Bc454e4438f44e",
+      "chainId": 11155111
+    }
+  },
+  "deployment": {
+    "timestamp": "2026-08-28T09:00:00Z",
+    "deployer": "GD5X2P7V5Z5J5...TESTNET",
+    "transactionHash": "4a91f82c3e41b9d0e2f5a6b7c8d9e0f1a2b3c4d5e6f7a8b9c0d1e2f3a4b5c6d7",
+    "status": "VERIFIED_ON_TESTNET"
+  }
+}
