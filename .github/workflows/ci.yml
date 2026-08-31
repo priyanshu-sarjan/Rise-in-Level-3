@@ -1,4 +1,4 @@
-name: CI Pipeline - Rise in Level 3 Orange Belt
+name: CI Pipeline - AyuTrace Soroban Web3 dApp
 
 on:
   push:

@@ -1,6 +1,6 @@
-# 🟠 Level 3 - Orange Belt Submission: AyuTrace Web3 & Soroban dApp (Rise-in-Level-3)
+# 🟠 Level 3 - Orange Belt Submission: AyuTrace Web3 & Soroban dApp (`ayutrace-soroban-dapp`)
 
-[![CI Pipeline](https://github.com/priyanshu-sarjan/Rise-in-Level-3/actions/workflows/ci.yml/badge.svg)](https://github.com/priyanshu-sarjan/Rise-in-Level-3/actions)
+[![CI Pipeline](https://github.com/priyanshu-sarjan/ayutrace-soroban-dapp/actions/workflows/ci.yml/badge.svg)](https://github.com/priyanshu-sarjan/ayutrace-soroban-dapp/actions)
 [![Stellar Soroban Testnet](https://img.shields.io/badge/Stellar-Soroban_Testnet-emerald)](https://soroban-testnet.stellar.org)
 [![React 19 & Vite](https://img.shields.io/badge/Framework-React_19_|_Vite-blue)](https://vitejs.dev/)
 Demo Video link - https://youtu.be/mHra7WstJwU 
@@ -13,7 +13,7 @@ A production-ready Stellar Soroban dApp combining the visual design and AI Agent
 
 - **Frontend Live Deployment (AI Agent Hub)**: [https://ai-agent-gwalior.vercel.app/](https://ai-agent-gwalior.vercel.app/)
 - **AgriFresh Live Deployment**: [https://agrifreshh.vercel.app/](https://agrifreshh.vercel.app/)
-- **GitHub Repository**: [https://github.com/priyanshu-sarjan/Rise-in-Level-3.git](https://github.com/priyanshu-sarjan/Rise-in-Level-3.git)
+- **GitHub Repository**: [https://github.com/priyanshu-sarjan/ayutrace-soroban-dapp.git](https://github.com/priyanshu-sarjan/ayutrace-soroban-dapp.git)
 
 ---
 
@@ -81,7 +81,7 @@ npm run build
 
 ## 📋 Submission Checklist (Level 3 - Orange Belt)
 
-- [x] Full codebase assembled in `https://github.com/priyanshu-sarjan/Rise-in-Level-3.git`.
+- [x] Full codebase assembled in `https://github.com/priyanshu-sarjan/ayutrace-soroban-dapp.git`.
 - [x] Preserved AyuTrace visual aesthetics and dashboard layout intact.
 - [x] Enhanced floating pop-up window (`AIAgentPopup`) into multi-tab Web3 Hub.
 - [x] Included Soroban Rust smart contracts with inter-contract communication (`contracts/tracelink_registry` & `contracts/tracelink_tracker`).
